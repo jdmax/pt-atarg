@@ -25,7 +25,7 @@ lakeshore_218:
     Test_TI:
       DESC: 'Test Resistor'
       PREC: 2
-      EGU: 'Ohm'
+      EGU: 'K'
       HIHI: 310
       HIGH: 300
       LOW: 2
