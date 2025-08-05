@@ -11,7 +11,7 @@ lakeshore_218:  # Lakeshore RS232: 7 data bits, Odd parity, 1 stop bit
   ip: '192.168.2.1'
   port: '23'    # channel 1 of serial to ethernet
   timeout: 2
-  delay: 10
+  delay: 5
   channels: # List of PV names for each read channel of 218 in order
     - Test_TI
     - None
@@ -38,12 +38,12 @@ dat8024:
   timeout: 2
   delay: 5
   channels: # List of channel names in order. None indicates unused channel.
-    - Voltage1_VC
+    - VoltageOut1_VC
     - None
     - None
     - None
   records:
-    Voltage1_VC:
+    VoltageOut1_VC:
       DESC: 'DAC Output 1'
       PREC: 3
       EGU: 'V'
@@ -61,14 +61,14 @@ dat8017_v:
   timeout: 2
   delay: 5
   channels: # List of PV names for each read channel of datexel in order
-    - Voltage1_VI
+    - VoltageIn1_VI
   calibration:
-    Voltage1_VI: 1
+    VoltageIn1_VI: 'None'
   records:
-    Voltage1_VI:
+    VoltageIn1_VI:
       DESC: 'Voltage In'
       PREC: 3
-      EGU: 'V'
+      EGU: 'mV'
       HIHI: 5
       HIGH: 5
       LOW: .01
