@@ -30,91 +30,10 @@ lakeshore_218:  # Lakeshore RS232: 7 data bits, Odd parity, 1 stop bit
       HIGH: 300
       LOW: 2
       LOLO: 1
-dat8018:
-  module: 'devices.dat8018'
-  autostart: True          # Should IOC Manager try to start this?
-  ip: '129.57.37.116'
-  port: '502'
-  timeout: 2
-  delay: 5
-  channels: # List of channel names in order. None indicates unused channel.
-    - One_TI
-    - Two_TI
-    - Three_TI
-    - Four_TI
-    - Five_TI
-    - Six_TI
-    - Seven_TI
-    - Eight_TI
-  records:
-    One_TI:
-      DESC: 'TC'
-      PREC: 2
-      EGU: 'C'
-      HIHI: 200
-      HIGH: 180
-      LOW: 2
-      LOLO: 1
-    Two_TI:
-      DESC: 'TC'
-      PREC: 2
-      EGU: 'C'
-      HIHI: 200
-      HIGH: 180
-      LOW: 2
-      LOLO: 1
-    Three_TI:
-      DESC: 'TC'
-      PREC: 2
-      EGU: 'C'
-      HIHI: 200
-      HIGH: 180
-      LOW: 2
-      LOLO: 1
-    Four_TI:
-      DESC: 'TC'
-      PREC: 2
-      EGU: 'C'
-      HIHI: 200
-      HIGH: 180
-      LOW: 2
-      LOLO: 1
-    Five_TI:
-      DESC: 'TC'
-      PREC: 2
-      EGU: 'C'
-      HIHI: 200
-      HIGH: 180
-      LOW: 2
-      LOLO: 1
-    Six_TI:
-      DESC: 'TC'
-      PREC: 2
-      EGU: 'C'
-      HIHI: 200
-      HIGH: 180
-      LOW: 2
-      LOLO: 1
-    Seven_TI:
-      DESC: 'TC'
-      PREC: 2
-      EGU: 'C'
-      HIHI: 200
-      HIGH: 180
-      LOW: 2
-      LOLO: 1
-    Eight_TI:
-      DESC: 'TC'
-      PREC: 2
-      EGU: 'C'
-      HIHI: 200
-      HIGH: 180
-      LOW: 2
-      LOLO: 1
 dat8024:
   module: 'devices.dat8024'
   autostart: True          # Should IOC Manager try to start this?
-  ip: '129.57.37.132'
+  ip: '192.168.1.12'
   port: '502'
   timeout: 2
   delay: 5
@@ -134,57 +53,23 @@ dat8024:
       HIGH: 5.5
       LOW: -1
       LOLO: -2
-dat8017_i:
+dat8017_v:
   module: 'devices.dat8017'
   autostart: True
-  ip: '129.57.37.137'
+  ip: '192.168.1.11'
   port: '502'
   timeout: 2
   delay: 5
   channels: # List of PV names for each read channel of datexel in order
-    - Bottle_PI
-  calibration: # psi gauge range for calibration
-    Bottle_PI: 3000
+    - Voltage1_VI
+  calibration:
+    Voltage1_VI: 1
   records:
-    Bottle_PI:
-      DESC: 'Bottle Pressure'
+    Voltage1_VI:
+      DESC: 'Voltage In'
       PREC: 3
-      EGU: 'psi'
-      HIHI: 2600
-      HIGH: 2500
-      LOW: 50
-      LOLO: 10
-mks937b:
-    module: 'devices.mks937b'
-    autostart: False          # Should IOC Manager try to start this?
-    ip: '192.168.1.107'
-    port: '1001'            # channel 3 of serial to ethernet
-    address: '003'          # serial address set on device, must be 3 digits
-    timeout: 2
-    delay: 2
-    channels:
-        - OVC_CC_PI
-        - None
-        - OVC_Pirani_PI
-zaber:
-    module: 'devices.zaber_motor'
-    autostart: True
-    ip: '192.168.1.40'
-    port: '55551'
-    timeout: 1
-    delay: 5
-    channels:   # list of "axes" in order. None indicates unused channel.
-        - Shutoff
-        - None
-        - Flag
-    locations:    # dict of preset locations (name then degrees from home) defaults for each channel
-        Shutoff:
-            - [Open, 1440]
-            - [Closed, 0]
-        Flag:
-            - [Empty, 21]
-            - [Cu-Sn, -6]
-            - [Carbon, 52]
-    check_home:    # should it run the home routine before each move
-        Shutoff: False
-        Flag: True
+      EGU: 'V'
+      HIHI: 5
+      HIGH: 5
+      LOW: .01
+      LOLO: 0
