@@ -63,7 +63,7 @@ dat8017_v:
   channels: # List of PV names for each read channel of datexel in order
     - VoltageIn1_VI
   calibration:
-    VoltageIn1_VI: 'None'
+    VoltageIn1_VI: 'None'  # Set as 'None' if no calibration to be applied, for 8017-V
   records:
     VoltageIn1_VI:
       DESC: 'Voltage In'
