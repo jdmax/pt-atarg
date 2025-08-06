@@ -4,11 +4,12 @@ general:
   prefix: TGT:ATST
   log_dir: 'logs'   # path of logs directory
   epics_addr_list: 'None'
+  #epics_addr_list: 129.57.188.255
   delay: 0.5
 lakeshore_218:  # Lakeshore RS232: 7 data bits, Odd parity, 1 stop bit
   module: 'devices.ls218'
   autostart: True          # Should IOC Manager try to start this?
-  ip: '192.168.2.1'
+  ip: '129.57.188.133'
   port: '23'    # channel 1 of serial to ethernet
   timeout: 2
   delay: 5
@@ -33,7 +34,7 @@ lakeshore_218:  # Lakeshore RS232: 7 data bits, Odd parity, 1 stop bit
 dat8024:
   module: 'devices.dat8024'
   autostart: True          # Should IOC Manager try to start this?
-  ip: '192.168.1.12'
+  ip: '129.57.188.93'
   port: '502'
   timeout: 2
   delay: 5
@@ -56,7 +57,7 @@ dat8024:
 dat8017_v:
   module: 'devices.dat8017'
   autostart: True
-  ip: '192.168.1.11'
+  ip: '129.57.188.79'
   port: '502'
   timeout: 2
   delay: 5
